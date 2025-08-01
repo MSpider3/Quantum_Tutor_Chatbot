@@ -63,7 +63,8 @@ Follow these steps to set up and run the project locally.
 2.  **Create and activate a virtual environment:**
     ```bash
     python -m venv .venv
-    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+    source .venv/bin/activate  # On Mac/Linux
+    .venv\Scripts\activate   # On Windows
     ```
 
 3.  **Install dependencies:**
