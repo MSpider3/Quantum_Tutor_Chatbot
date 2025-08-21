@@ -26,8 +26,11 @@ class CONFIG:
         )
 
      # --- LLM Model Names ---
+   # PRIMARY_LLM_MODEL = "openai/gpt-oss-120b"
+  #  PRIMARY_LLM_MODEL = "deepseek-r1-distill-llama-70b"
+  #  PRIMARY_LLM_MODEL = "qwen/qwen3-32b"
     PRIMARY_LLM_MODEL = "llama-3.3-70b-versatile"
-    SUMMARIZER_LLM_MODEL = "llama-3.1-8b-instant"
+    SUMMARIZER_LLM_MODEL = "gemma2-9b-it"
     FALLBACK_LLM_MODEL = "llama3.1:8b"
     JUDGE_LLM_MODEL = "llama-3.3-70b-versatile"
 
@@ -46,22 +49,22 @@ class CONFIG:
     EMBEDDING_MODEL_NAME = "BAAI/bge-m3"
     RERANKER_MODEL_NAME = "BAAI/bge-reranker-large"
     
-    # --- RAG Tuning Hyperparameters ---
-    INITIAL_K = 75
-    RERANK_K = 25
-    TOP_K_TO_LLM = 5
-    RERANKER_SCORE_THRESHOLD = 0.4
-    SAFE_CHAR_LIMIT_FOR_DISTILLATION = 4000
-
-    # --- Ingestion Parameters ---
-    CHUNK_SIZE = 512
-    CHUNK_OVERLAP = 100
-    
-    # --- Evaluation Tuning Parameters ---
-    API_SLEEP_INTERVAL = 3
-    MAX_CONTEXT_CHARS = 3000
+     # --- Evaluation Tuning Parameters ---
+    API_SLEEP_INTERVAL = 10
+    MAX_CONTEXT_CHARS = 4000
     MAX_ANSWER_CHARS = 1500
     MAX_GT_CHARS = 1500
+    
+    # --- RAG Tuning Hyperparameters ---
+    INITIAL_K = 50
+    RERANK_K = 25
+    TOP_K_TO_LLM = 3
+    RERANKER_SCORE_THRESHOLD = 0.4
+    SAFE_CHAR_LIMIT_FOR_DISTILLATION = int(1.25 * MAX_CONTEXT_CHARS)
+
+    # --- Ingestion Parameters ---
+    CHUNK_SIZE = 1800
+    CHUNK_OVERLAP = 220
     
     # --- Hardware Configuration ---
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

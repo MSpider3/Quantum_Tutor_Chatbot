@@ -1,0 +1,16 @@
+# To run the benchmark.py file and make sure to channge the numbers shard's file
+
+python chatbot/benchmark.py  --dataset ./benchmarking_data/benchmark_dataset.jsonl  --out ./benchmark_data_deepseek_r1_distill_llama_70b/generated_answers.jsonl
+or
+python chatbot/benchmark.py  --dataset ./benchmarking_data/benchmark_dataset.jsonl  --out ./benchmark_data_openai_gpt_oss_120b/generated_answers.jsonl
+or
+python chatbot/benchmark.py  --dataset ./benchmarking_data/benchmark_dataset.jsonl  --out ./benchmark_data_qwen_qwen3_32b/generated_answers.jsonl
+
+
+# To run the evaluate.py file and make sure to channge the numbers shard's file
+
+python chatbot/evaluate.py  --answers ./benchmark_data_deepseek_r1_distill_llama_70b/generated_answers.jsonl  --out ./benchmark_data_deepseek_r1_distill_llama_70b/benchmark_evaluation.csv  --resume --stop_on_tpd
+or
+python chatbot/evaluate.py  --answers ./benchmark_data_openai_gpt_oss_120b/generated_answers.jsonl  --out ./benchmark_data_openai_gpt_oss_120b/benchmark_evaluation.csv  --resume --stop_on_tpd
+or
+python chatbot/evaluate.py  --answers ./benchmark_data_qwen_qwen3_32b/generated_answers.jsonl  --out ./benchmark_data_qwen_qwen3_32b/benchmark_evaluation.csv  --resume --stop_on_tpd

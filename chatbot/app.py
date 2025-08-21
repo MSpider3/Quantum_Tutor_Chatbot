@@ -168,6 +168,7 @@ if st.session_state.session_id:
                 for j, question in enumerate(msg["suggested_questions"]):
                     if cols[j].button(question, key=f"suggestion_{i}_{j}"):
                         st.session_state.messages.append({"role": "user", "content": question})
+                        st.session_state.history.add_user_message(question)
                         db.save_message(st.session_state.session_id, 'user', question)
                         st.rerun()
 
