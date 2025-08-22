@@ -77,6 +77,8 @@ This flow outlines the sequence of operations from user query submission to the 
 10. Model refusal? If yes and context is available, Force-Answer Retry (benchmark mode) to ensure comparability.
 11. Cache & Persist: cache retrieved docs for follow-ups and persist messages + sources in SQLite.
 
+**The Process Flow graph (to view this properly, view this GitHub web version)**
+
 ```mermaid
 graph TD
     subgraph "User Interface (app.py)"
