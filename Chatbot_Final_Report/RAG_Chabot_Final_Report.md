@@ -1,6 +1,7 @@
 # Final Report: Development and Benchmarking of an Advanced Retrieval-Augmented Generation (RAG) Chatbot for Quantum Computing
 
 **Author:** Mehul Golecha
+
 **Date:** August 21, 2025
 
 ---
